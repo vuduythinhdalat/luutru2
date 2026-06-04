@@ -1,0 +1,8 @@
+{
+  "name": "Trang Danh Bạ Web",
+  "description": "Một trang danh bạ chuyên nghiệp với thanh tìm kiếm và thiết kế tối giản, dễ dàng nhúng vào website.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
