@@ -8,16 +8,50 @@ import { MapPin, Phone, Mail, User, ShieldCheck, ChevronLeft, ChevronRight, Arro
 
 const COUNCIL_MEMBERS = [
   { id: 'c1', name: "Fx. Nguyễn Thanh Lý", role: "Cha Giám Tỉnh" },
-  { id: 'c2', name: "Giuse Phạm Văn Diệm", role: "Cha" },
-  { id: 'c3', name: "GB. Đặng Kim Đoài", role: "Cha" },
-  { id: 'c4', name: "Laurensô Trần Nam Sách", role: "Cha" },
-  { id: 'c5', name: "GB. Nguyễn Trọng Thịnh", role: "Cha" },
-  { id: 'c6', name: "Phêrô Ngô Văn Thuyên", role: "Cha" },
+  { id: 'c5', name: "GB. Nguyễn Trọng Thịnh", role: "Cha Phụ Tá" },
+  { id: 'c2', name: "Giuse Phạm Văn Diệm", role: "Cha Cố Vấn" },
+  { id: 'c3', name: "GB. Đặng Kim Đoài", role: "Cha Cố Vấn" },
+  { id: 'c4', name: "Laurensô Trần Nam Sách", role: "Cha Cố Vấn" },
+  { id: 'c6', name: "Phêrô Ngô Văn Thuyên", role: "Cha Cố Vấn" },
+];
+
+const FINANCE_COMMISSION_MEMBERS = [
+  { id: 'f1', name: "Laurensô Trần Nam Sách", role: "Cha" },
+  { id: 'f2', name: "Phêrô Nguyễn Công Tuấn", role: "Cha" },
+  { id: 'f3', name: "Vinh Sơn F. Phạm Trung Hiếu", role: "Cha" },
 ];
 
 const SPECIAL_APPOINTMENTS = [
   { id: 's1', name: "Giuse Vũ Tuyên Huấn", role: "Cha Thư ký Tỉnh" },
-  { id: 's2', name: "Phêrô Nguyễn Quang Tiến", role: "Cha Đại Diện Tỉnh" },
+  { id: 's2', name: "Augustinô Vũ Duy Thịnh", role: "Thầy Phụ Tá Thư Ký" },
+];
+
+const MEDIA_COMMISSION_MEMBERS = [
+  { id: 'm2', name: "Giuse Lê Xuân Thỏa", role: "Cha" },
+];
+
+const INVESTIGATION_BOARD_MEMBERS = [
+  { id: 'ib1', name: "Giuse Phạm Văn Diệm", role: "Cha" },
+  { id: 'ib2', name: "Giuse Vũ Ngọc Hoàng Thái", role: "Cha" },
+  { id: 'ib3', name: "Phêrô Trần Văn Minh", role: "Cha" },
+];
+
+const LITURGY_BOARD_MEMBERS = [
+  { id: 'lb1', name: "Phanxicô Xavie Phạm Trọng Châu", role: "Cha" },
+];
+
+const EVANGELIZATION_BOARD_MEMBERS = [
+  { id: 'ev1', name: "Phêrô Nguyễn Hữu Sáng", role: "Cha" },
+  { id: 'ev2', name: "Phêrô Nguyễn Sơn Luân", role: "Cha" },
+  { id: 'ev3', name: "Phaolô Trần Văn Lành", role: "Cha" },
+  { id: 'ev4', name: "Giuse Phạm Minh Thành", role: "Cha" },
+  { id: 'ev5', name: "Giuse Phạm Thế Hoàn", role: "Cha" },
+];
+
+const DIRECTOR_APPOINTMENTS = [
+  { id: 'd1', name: "Phêrô Ngô Văn Thuyên", role: "Cha Giám Đốc Thỉnh Viện" },
+  { id: 'd2', name: "Phêrô Trần Văn Minh", role: "Cha Giám Đốc Nội Chủng Viện" },
+  { id: 'd3', name: "GB. Đặng Kim Đoài", role: "Cha Giám Đốc Học Viện Durando" },
 ];
 
 const CANONICAL_HOUSES = [
@@ -34,11 +68,11 @@ const COMMUNITIES = [
 ];
 
 const MISSION_LOCATIONS_AD_GENTES = [
-  "Hoa Kỳ", "Pháp", "Tây Ban Nha", "Hà Lan", "Pakistan", "Đài Loan", "PNG", "Nhật", "Lào", "Costa Rica"
+  "Hoa Kỳ", "Pháp", "Tây Ban Nha", "Hà Lan", "Pakistan", "Đài Loan", "Papua New Guinea", "Nhật", "Lào", "Costa Rica", "Australia", "Hàn Quốc"
 ];
 
 const STUDY_ABROAD_LOCATIONS = [
-  "Pháp", "Hoa Kỳ", "Australia", "Ý", "Philippines"
+  "Pháp", "Hoa Kỳ", "Ý", "Philippines"
 ];
 
 const NHA_TINH_CONTACTS = [
@@ -920,17 +954,6 @@ const NHA_XUAN_HOA_CONTACTS = [
     email: "tongphuochaokt@gmail.com"
   },
   {
-    id: 'xh3',
-    name: "Phêrô Nguyễn Văn Hiến",
-    role: "Thành viên",
-    birthDate: "15/06/1987",
-    novitiateDate: "11/8/2018",
-    vowsDate: "20/06/2024",
-    ordinationDate: "20/08/2025",
-    phone: "0344367513",
-    email: "hiennguyenms567@gmail.com"
-  },
-  {
     id: 'xh4',
     name: "Giuse Maria Nguyễn Văn Toản",
     role: "Thành viên",
@@ -1415,6 +1438,17 @@ const CONG_DOAN_BAC_TAN_UYEN_CONTACTS = [
     ordinationDate: "16/02/2004",
     phone: "0902517321",
     email: "jmtrungcm@yahoo.fr"
+  },
+  {
+    id: 'btu6',
+    name: "Gioan Maria Đỗ Vũ Đức Minh",
+    role: "Thành viên",
+    birthDate: "11/01/1992",
+    novitiateDate: "09/08/2019",
+    vowsDate: "20/08/2025",
+    ordinationDate: "",
+    phone: "0868033767",
+    email: "dominh1101@gmail.com"
   }
 ];
 
@@ -1658,6 +1692,17 @@ const CONG_DOAN_PHINH_HO_CONTACTS = [
     ordinationDate: "10/08/2023",
     phone: "0981604642",
     email: "quangtien9977@gmail.com"
+  },
+  {
+    id: 'ph11',
+    name: "Phêrô Nguyễn Văn Hiến",
+    role: "Thành viên",
+    birthDate: "15/06/1987",
+    novitiateDate: "11/8/2018",
+    vowsDate: "20/06/2024",
+    ordinationDate: "20/08/2025",
+    phone: "0344367513",
+    email: "hiennguyenms567@gmail.com"
   }
 ];
 
@@ -1672,6 +1717,17 @@ const CONG_DOAN_HOA_KY_CONTACTS = [
     ordinationDate: "01/06/2013",
     email: "josnaldalat@gmail.com",
     phone: "0768160238"
+  },
+  {
+    id: 'us_dh1',
+    name: "Giuse Nguyễn Hữu Hiến Minh",
+    role: "Thành viên",
+    birthDate: "19/09/1984",
+    novitiateDate: "15/08/2013",
+    vowsDate: "26/07/2019",
+    ordinationDate: "22/06/2020",
+    email: "minhmap037@gmail.com",
+    phone: "0354514833"
   }
 ];
 
@@ -1686,6 +1742,17 @@ const CONG_DOAN_PHAP_CONTACTS = [
     ordinationDate: "21/09/2005",
     email: "thanhcong023@gmail.com",
     phone: "0909549023"
+  },
+  {
+    id: 'fr_dh2',
+    name: "Phêrô Nguyễn Văn Hưng",
+    role: "Thành viên",
+    birthDate: "20/07/1982",
+    novitiateDate: "15/08/2009",
+    vowsDate: "17/07/2015",
+    ordinationDate: "11/09/2015",
+    email: "peterhungcm@gmail.com",
+    phone: "033751061414"
   }
 ];
 
@@ -1900,6 +1967,31 @@ const CONG_DOAN_COSTA_RICA_CONTACTS = [
   }
 ];
 
+const CONG_DOAN_HAN_QUOC_CONTACTS = [
+  {
+    id: 'kr1',
+    name: "Antôn Nguyễn Văn Bính",
+    role: "Thành viên",
+    birthDate: "04/10/1988",
+    novitiateDate: "13/08/2016",
+    vowsDate: "29/07/2022",
+    ordinationDate: "10/08/2023",
+    email: "kienvangqt3@gmail.com",
+    phone: "0386011038"
+  },
+  {
+    id: 'kr2',
+    name: "Giuse Nguyễn Quốc Dũng",
+    role: "Thành viên",
+    birthDate: "14/11/1985",
+    novitiateDate: "13/08/2016",
+    vowsDate: "29/07/2022",
+    ordinationDate: "10/08/2023",
+    email: "giusedungcm@gmail.com",
+    phone: "0353257371"
+  }
+];
+
 const DU_HOC_PHAP_CONTACTS = [
   {
     id: 'fr_dh1',
@@ -1911,32 +2003,10 @@ const DU_HOC_PHAP_CONTACTS = [
     ordinationDate: "08/04/2021",
     email: "vutienduccm@gmail.com",
     phone: "0758301486"
-  },
-  {
-    id: 'fr_dh2',
-    name: "Phêrô Nguyễn Văn Hưng",
-    role: "Thành viên",
-    birthDate: "20/07/1982",
-    novitiateDate: "15/08/2009",
-    vowsDate: "17/07/2015",
-    ordinationDate: "11/09/2015",
-    email: "peterhungcm@gmail.com",
-    phone: "033751061414"
   }
 ];
 
 const DU_HOC_HOA_KY_CONTACTS = [
-  {
-    id: 'us_dh1',
-    name: "Giuse Nguyễn Hữu Hiến Minh",
-    role: "Thành viên",
-    birthDate: "19/09/1984",
-    novitiateDate: "15/08/2013",
-    vowsDate: "26/07/2019",
-    ordinationDate: "22/06/2020",
-    email: "minhmap037@gmail.com",
-    phone: "0354514833"
-  },
   {
     id: 'us_dh2',
     name: "Phêrô Ngô Văn Ngọc",
@@ -2057,7 +2127,7 @@ export default function App() {
   };
 
   const visiblePages = useMemo(() => {
-    const totalPages = 40;
+    const totalPages = 41;
     const pages: (number | string)[] = [];
     
     // Always show page 1
@@ -2090,7 +2160,13 @@ export default function App() {
 
   const ALL_MEMBERS = useMemo(() => [
     ...COUNCIL_MEMBERS.map(m => ({ ...m, type: 'council', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...FINANCE_COMMISSION_MEMBERS.map(m => ({ ...m, type: 'finance', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
     ...SPECIAL_APPOINTMENTS.map(m => ({ ...m, type: 'special', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...DIRECTOR_APPOINTMENTS.map(m => ({ ...m, type: 'director', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...MEDIA_COMMISSION_MEMBERS.map(m => ({ ...m, type: 'media', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...INVESTIGATION_BOARD_MEMBERS.map(m => ({ ...m, type: 'investigation', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...LITURGY_BOARD_MEMBERS.map(m => ({ ...m, type: 'liturgy', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
+    ...EVANGELIZATION_BOARD_MEMBERS.map(m => ({ ...m, type: 'evangelization', phone: 'Chưa cập nhật', email: 'Chưa cập nhật' })),
     ...NHA_TINH_CONTACTS.map(m => ({ ...m, type: 'nha_tinh' })),
     ...NHA_DA_LAT_CONTACTS.map(m => ({ ...m, type: 'nha_da_lat' })),
     ...NHA_KA_DON_PROH_CONTACTS.map(m => ({ ...m, type: 'nha_ka_don_proh' })),
@@ -2124,6 +2200,7 @@ export default function App() {
     ...CONG_DOAN_NHAT_CONTACTS.map(m => ({ ...m, type: 'cong_doan_nhat' })),
     ...CONG_DOAN_LAO_CONTACTS.map(m => ({ ...m, type: 'cong_doan_lao' })),
     ...CONG_DOAN_COSTA_RICA_CONTACTS.map(m => ({ ...m, type: 'cong_doan_costa_rica' })),
+    ...CONG_DOAN_HAN_QUOC_CONTACTS.map(m => ({ ...m, type: 'cong_doan_han_quoc' })),
     ...DU_HOC_PHAP_CONTACTS.map(m => ({ ...m, type: 'du_hoc_phap' })),
     ...DU_HOC_HOA_KY_CONTACTS.map(m => ({ ...m, type: 'du_hoc_hoa_ky' })),
     ...DU_HOC_AUSTRALIA_CONTACTS.map(m => ({ ...m, type: 'du_hoc_australia' })),
@@ -2133,7 +2210,7 @@ export default function App() {
 
   const sortedAllMembers = useMemo(() => {
     return [...ALL_MEMBERS]
-      .filter(m => m.type !== 'council' && m.type !== 'special')
+      .filter(m => m.type !== 'council' && m.type !== 'special' && m.type !== 'media' && m.type !== 'finance' && m.type !== 'director' && m.type !== 'investigation' && m.type !== 'liturgy' && m.type !== 'evangelization')
       .sort((a, b) => {
         const getLastWord = (fullName: string) => {
           const trimmed = (fullName || '').trim();
@@ -2151,7 +2228,13 @@ export default function App() {
   const getHouseName = (type: string) => {
     switch (type) {
       case 'council': return 'Ban Điều Hành';
-      case 'special': return 'Bổ Nhiệm Đặc Biệt';
+      case 'finance': return 'Ban Tài Chính';
+      case 'special': return 'Ban Thư Ký';
+      case 'director': return 'Bổ Nhiệm Giám Đốc';
+      case 'media': return 'Ban Truyền Thông';
+      case 'investigation': return 'Ban Điều Tra';
+      case 'liturgy': return 'Ban Phụng Vụ';
+      case 'evangelization': return 'Ban Đại Phúc';
       case 'nha_tinh': return 'Nhà Tỉnh';
       case 'nha_da_lat': return 'Nhà Đà Lạt';
       case 'nha_ka_don_proh': return 'Nhà Ka Đơn - Próh';
@@ -2181,10 +2264,11 @@ export default function App() {
       case 'cong_doan_ha_lan': return 'Hà Lan';
       case 'cong_doan_pakistan': return 'Pakistan';
       case 'cong_doan_dai_loan': return 'Đài Loan';
-      case 'cong_doan_png': return 'PNG';
+      case 'cong_doan_png': return 'Papua New Guinea';
       case 'cong_doan_nhat': return 'Nhật Bản';
       case 'cong_doan_lao': return 'Lào';
       case 'cong_doan_costa_rica': return 'Costa Rica';
+      case 'cong_doan_han_quoc': return 'Hàn Quốc';
       case 'du_hoc_phap': return 'Du Học Pháp';
       case 'du_hoc_hoa_ky': return 'Du Học Hoa Kỳ';
       case 'du_hoc_australia': return 'Du Học Australia';
@@ -2247,6 +2331,7 @@ export default function App() {
     else if (member.type === 'cong_doan_nhat') targetPage = 32;
     else if (member.type === 'cong_doan_lao') targetPage = 33;
     else if (member.type === 'cong_doan_costa_rica') targetPage = 34;
+    else if (member.type === 'cong_doan_han_quoc') targetPage = 40;
     else if (member.type === 'du_hoc_phap') targetPage = 35;
     else if (member.type === 'du_hoc_hoa_ky') targetPage = 36;
     else if (member.type === 'du_hoc_australia') targetPage = 37;
@@ -2483,8 +2568,9 @@ export default function App() {
               <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-[10px] uppercase tracking-[0.2em] font-bold rounded-full mb-4">
                 Cơ sở dữ liệu nhân sự
               </div>
-              <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 mx-auto max-w-2xl">
-                Tu Hội Truyền Giáo Thánh Vinh Sơn
+              <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-gray-900 mx-auto max-w-2xl leading-snug">
+                Tu Hội Truyền Giáo Vinh Sơn<br />
+                <span className="text-xl md:text-2xl font-bold text-blue-600 block mt-1">Tỉnh Dòng Việt Nam</span>
               </h2>
               <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
                 Hệ thống quản lý thông tin liên hệ chính thống dành cho thành viên của Tu Hội.
@@ -2492,7 +2578,7 @@ export default function App() {
               
               <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
                 <div 
-                  onClick={() => goToPage(40)}
+                  onClick={() => goToPage(41)}
                   className="bg-gray-50 rounded-2xl p-4 border border-blue-100 hover:border-blue-300 hover:bg-blue-50/50 shadow-sm cursor-pointer transition-all group"
                 >
                   <div className="text-2xl font-bold text-blue-600 tabular-nums group-hover:scale-105 transition-transform origin-left">175</div>
@@ -2503,11 +2589,11 @@ export default function App() {
                   <div className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Độ tuổi TB</div>
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-gray-900 tabular-nums">138</div>
+                  <div className="text-2xl font-bold text-gray-900 tabular-nums">159</div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Linh Mục</div>
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-gray-900 tabular-nums">23</div>
+                  <div className="text-2xl font-bold text-gray-900 tabular-nums">11</div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Phó tế</div>
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
@@ -2544,16 +2630,177 @@ export default function App() {
               </div>
             </div>
 
-            {/* Bổ Nhiệm Đặc Biệt Section */}
             <div className="mb-16">
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px flex-1 bg-gray-100" />
-                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Bổ Nhiệm Đặc Biệt</h3>
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Tài Chính</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {FINANCE_COMMISSION_MEMBERS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ban Thư Ký Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Thư Ký</h3>
                 <div className="h-px flex-1 bg-gray-100" />
               </div>
               
               <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 {SPECIAL_APPOINTMENTS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bổ Nhiệm Giám Đốc Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Bổ Nhiệm Giám Đốc</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                {DIRECTOR_APPOINTMENTS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ban Truyền Thông Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Truyền Thông</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+                {MEDIA_COMMISSION_MEMBERS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm mx-auto w-full max-w-md"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ban Điều Tra Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Điều Tra</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                {INVESTIGATION_BOARD_MEMBERS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ban Phụng Vụ Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Phụng Vụ</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+                {LITURGY_BOARD_MEMBERS.map((member) => (
+                  <div 
+                    key={member.id}
+                    id={member.id}
+                    className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-4 hover:border-blue-200 transition-all shadow-sm mx-auto w-full max-w-md"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-sm border border-gray-50">
+                      <User size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">{member.role}</div>
+                      <div className="font-bold text-gray-900">{member.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ban Đại Phúc Section */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Ban Đại Phúc</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                {EVANGELIZATION_BOARD_MEMBERS.map((member) => (
                   <div 
                     key={member.id}
                     id={member.id}
@@ -2647,7 +2894,7 @@ export default function App() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
                   {MISSION_LOCATIONS_AD_GENTES.map((location, index) => {
-                    const isInteractive = location === "Hoa Kỳ" || location === "Pháp" || location === "Tây Ban Nha" || location === "Hà Lan" || location === "Pakistan" || location === "Đài Loan" || location === "PNG" || location === "Nhật" || location === "Lào" || location === "Costa Rica";
+                    const isInteractive = location === "Hoa Kỳ" || location === "Pháp" || location === "Tây Ban Nha" || location === "Hà Lan" || location === "Pakistan" || location === "Đài Loan" || location === "Papua New Guinea" || location === "Nhật" || location === "Lào" || location === "Costa Rica" || location === "Australia" || location === "Hàn Quốc";
                     return (
                       <div 
                         key={index}
@@ -2664,7 +2911,7 @@ export default function App() {
                             goToPage(29);
                           } else if (location === "Đài Loan") {
                             goToPage(30);
-                          } else if (location === "PNG") {
+                          } else if (location === "Papua New Guinea") {
                             goToPage(31);
                           } else if (location === "Nhật") {
                             goToPage(32);
@@ -2672,6 +2919,10 @@ export default function App() {
                             goToPage(33);
                           } else if (location === "Costa Rica") {
                             goToPage(34);
+                          } else if (location === "Australia") {
+                            goToPage(37);
+                          } else if (location === "Hàn Quốc") {
+                            goToPage(40);
                           }
                         }}
                         className={`bg-gray-50 border border-gray-100 p-3 rounded-lg flex items-center justify-center text-center hover:bg-blue-50 hover:border-blue-200 transition-all group ${isInteractive ? 'cursor-pointer border-blue-100 bg-blue-50/30' : 'cursor-default'}`}
@@ -2690,7 +2941,7 @@ export default function App() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
                   {STUDY_ABROAD_LOCATIONS.map((location, index) => {
-                    const isInteractive = location === "Pháp" || location === "Hoa Kỳ" || location === "Australia" || location === "Ý" || location === "Philippines";
+                    const isInteractive = location === "Pháp" || location === "Hoa Kỳ" || location === "Ý" || location === "Philippines";
                     return (
                       <div 
                         key={index}
@@ -2699,8 +2950,6 @@ export default function App() {
                             goToPage(35);
                           } else if (location === "Hoa Kỳ") {
                             goToPage(36);
-                          } else if (location === "Australia") {
-                            goToPage(37);
                           } else if (location === "Ý") {
                             goToPage(38);
                           } else if (location === "Philippines") {
@@ -6405,7 +6654,7 @@ export default function App() {
                 Danh mục chi tiết
               </div>
               <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 italic">
-                PNG
+                Papua New Guinea
               </h2>
               <div className="h-1 w-20 bg-blue-600 rounded-full mb-8" />
 
@@ -6513,7 +6762,7 @@ export default function App() {
                     <User size={40} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Đang cập nhật thành viên</h3>
-                  <p className="text-gray-500 max-w-sm mx-auto">Thông tin chi tiết về các thành viên tại PNG sẽ sớm được bổ sung vào hệ thống.</p>
+                  <p className="text-gray-500 max-w-sm mx-auto">Thông tin chi tiết về các thành viên tại Papua New Guinea sẽ sớm được bổ sung vào hệ thống.</p>
                 </div>
               )}
             </div>
@@ -7167,7 +7416,7 @@ export default function App() {
                 Danh mục chi tiết
               </div>
               <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 italic">
-                Australia (Du Học)
+                Australia
               </h2>
               <div className="h-1 w-20 bg-blue-600 rounded-full mb-8" />
 
@@ -7280,7 +7529,7 @@ export default function App() {
               )}
             </div>
           </div>
-        ) : currentPage === 37 ? (
+        ) : currentPage === 9999 ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <button 
               onClick={() => goToPage(1)}
@@ -7675,6 +7924,133 @@ export default function App() {
                 Danh mục chi tiết
               </div>
               <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 italic">
+                Hàn Quốc
+              </h2>
+              <div className="h-1 w-20 bg-blue-600 rounded-full mb-8" />
+
+              {/* Intro Section */}
+              <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 mb-12 shadow-sm">
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                      <Calendar size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Thành Lập</div>
+                      <div className="font-bold text-gray-900">Trống</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                      <MapPin size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Địa chỉ</div>
+                      <div className="font-bold text-gray-900 leading-tight">Trống</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                      <ShieldCheck size={20} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Bổn Mạng</div>
+                      <div className="font-bold text-gray-900">Trống</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-100" />
+                <h3 className="text-sm uppercase tracking-[0.3em] font-black text-blue-600">Các Thành Viên</h3>
+                <div className="h-px flex-1 bg-gray-100" />
+              </div>
+            </div>
+
+            <div className="grid gap-6">
+              {CONG_DOAN_HAN_QUOC_CONTACTS.length > 0 ? CONG_DOAN_HAN_QUOC_CONTACTS.map((contact: any) => (
+                <div 
+                  key={contact.id}
+                  id={contact.id}
+                  className="bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-100 transition-all group overflow-hidden relative"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-blue-100/50 transition-colors" />
+                  <div className="relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-300 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:scale-110 group-hover:rotate-3 shadow-sm">
+                          <User size={28} />
+                        </div>
+                        <div>
+                          <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">{contact.role}</div>
+                          <div className="text-2xl font-black text-gray-900 tracking-tight">{contact.name}</div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 border-t border-gray-50 pt-4 md:border-none md:pt-0">
+                        <div className="flex items-center gap-3 text-sm text-gray-600">
+                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500">
+                            <Phone size={16} />
+                          </div>
+                          <span className="font-bold">{contact.phone || "Để trống"}</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm text-gray-600">
+                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500">
+                            <Mail size={16} />
+                          </div>
+                          <span className="font-bold">{contact.email || "Chưa cập nhật"}</span>
+                        </div>
+                      </div>
+                    </div>
+                    {contact.birthDate && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-gray-50">
+                        <div>
+                          <div className="text-[9px] uppercase tracking-wider text-gray-400 font-bold mb-1">Ngày sinh</div>
+                          <div className="text-sm font-bold text-gray-900 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">{contact.birthDate}</div>
+                        </div>
+                        <div>
+                          <div className="text-[9px] uppercase tracking-wider text-gray-400 font-bold mb-1">Vào Nhà Tập</div>
+                          <div className="text-sm font-bold text-gray-900 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">{contact.novitiateDate}</div>
+                        </div>
+                        <div>
+                          <div className="text-[9px] uppercase tracking-wider text-gray-400 font-bold mb-1">Khấn trọn</div>
+                          <div className="text-sm font-bold text-gray-900 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">{contact.vowsDate}</div>
+                        </div>
+                        <div>
+                          <div className="text-[9px] uppercase tracking-wider text-gray-400 font-bold mb-1">Chịu chức</div>
+                          <div className="text-sm font-bold text-gray-900 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">{contact.ordinationDate || "—"}</div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )) : (
+                <div className="bg-gray-50 border border-gray-200 rounded-3xl p-12 text-center border-dashed">
+                  <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-6">
+                    <User size={40} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Đang cập nhật thành viên</h3>
+                  <p className="text-gray-500 max-w-sm mx-auto">Thông tin chi tiết về các thành viên tại Hàn Quốc sẽ sớm được bổ sung vào hệ thống.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : currentPage === 41 ? (
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <button 
+              onClick={() => goToPage(1)}
+              className="flex items-center gap-2 text-blue-600 font-bold mb-8 hover:translate-x-[-4px] transition-transform"
+            >
+              <ArrowLeft size={20} />
+              <span>Quay lại trang chủ</span>
+            </button>
+            <div className="mb-12">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-[10px] uppercase tracking-[0.2em] font-bold rounded-full mb-4">
+                Danh mục chi tiết
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 italic">
                 Tổng thành viên (175)
               </h2>
               <div className="h-1 w-20 bg-blue-600 rounded-full mb-8" />
@@ -7685,11 +8061,11 @@ export default function App() {
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Thống kê cơ cấu nhân sự</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      Tổng số thành viên trong Tu Hội Truyền Giáo Thánh Vinh Sơn Tỉnh Dòng Việt Nam hiện tại là 175 thành viên, bao gồm:
+                      Tổng số thành viên trong Tu Hội Truyền Giáo Vinh Sơn Tỉnh Dòng Việt Nam hiện tại là 175 thành viên, bao gồm:
                     </p>
                     <ul className="list-disc pl-5 mt-3 space-y-1 text-sm text-gray-600">
-                      <li>Linh mục: 138 thành viên</li>
-                      <li>Phó tế: 23 thành viên</li>
+                      <li>Linh mục: 159 thành viên</li>
+                      <li>Phó tế: 11 thành viên</li>
                       <li>Tu huynh: 5 thành viên</li>
                     </ul>
                   </div>
@@ -7816,16 +8192,16 @@ export default function App() {
             </div>
 
             <button 
-              onClick={() => currentPage < 40 && goToPage(currentPage + 1)}
+              onClick={() => currentPage < 41 && goToPage(currentPage + 1)}
               className="p-2 rounded-lg border border-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors disabled:opacity-50"
-              disabled={currentPage === 40}
+              disabled={currentPage === 41}
             >
               <ChevronRight size={20} />
             </button>
           </div>
           
           <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-            Trang {currentPage} trên 40
+            Trang {currentPage} trên 41
           </div>
         </div>
       </main>
